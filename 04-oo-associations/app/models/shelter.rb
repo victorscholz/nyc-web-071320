@@ -1,4 +1,4 @@
-require_relative './animal.rb'
+# require_relative './animal.rb'
 require 'pry'
 
 class Shelter
@@ -6,6 +6,7 @@ class Shelter
     attr_reader :shelter
 
     @@all = [] 
+
     def initialize(shelter)
         @shelter = shelter
         @@all << self
@@ -24,10 +25,10 @@ class Shelter
         Animal.all.select {|animal| animal.shelter == self}
     end
 
-    def find_all_adopted
-        Animal.all.select {|animal| animal.shelter == "adopted"
-            animal.count}
-        end
+    def find_all_adopted(animal_instance)
+        Animal.all.select {|animal_instance| animal_instance.shelter == "adopted"
+            animal_instance.count}
+        
             #"#{} animal(s) are adopted." 
     end
     
@@ -35,8 +36,5 @@ class Shelter
         Animal.all.count
     end
 
-
-
 end
-
 
